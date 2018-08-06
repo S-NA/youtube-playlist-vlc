@@ -1,0 +1,27 @@
+Linux:
+  Prerequisites:
+    VLC, youtube-dl
+
+  Pseudocode to install:
+    echo $XDG_DATA_HOME # this returns a path or nothing
+    if nothing
+      path = $HOME/.local/share
+    else
+      path = $XDG_DATA_HOME
+  
+    cd path/vlc
+    # if the directory lua does not exist
+      mkdir lua
+      cd lua
+      mkdir modules
+      mkdir playlist
+    # repo is the git repository
+    cp repo/modules/json.lua lua/modules/json.lua
+    # you will need to modify the template by hand
+    cp repo/playlist/template_youtube-dl.lua lua/playlist/youtube-dl.lua
+  OR
+    See the python script.
+
+Windows:
+  See the python script.
+
