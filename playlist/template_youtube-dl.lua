@@ -12,11 +12,11 @@ end
 function parse()
     vlc.msg.info("YouTube Playlist Support via youtube-dl.")
     local url = vlc.access .. "://" .. vlc.path
-    local f = assert (io.popen ([[@ytdl_binary_path@ --no-check-certificate -f best -j "]] .. url .. [["]], 'r'))
+    local f = assert (io.popen ([[@ytdl_binary_path@ --no-check-certificate -j --flat-playlist "]] .. url .. [["]], 'r'))
     ytplaylist = {}
     for line in f:lines() do
         ljson = json.parse(line) -- line json
-        table.insert(ytplaylist, { path = ljson.url; name = ljson.fulltitle; arturl = ljson.thumbnail; })
+        table.insert(ytplaylist, { path = [[http://www.youtube.com/watch?v=]] .. ljson.url; name = ljson.title; arturl = [[http://img.youtube.com/vi/]] .. ljson.url .. [[/maxresdefault.jpg]]; })
     end
     f:close()
     return ytplaylist

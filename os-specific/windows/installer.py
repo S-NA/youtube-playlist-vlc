@@ -22,7 +22,7 @@ assertTrue(os.path.isdir(szPlaylistFolder))
 assertTrue(os.path.isdir(szModulesFolder))
 
 # Install json.lua to modules.
-jsonLUA = urlrequest.urlopen('https://raw.githubusercontent.com/rxi/json.lua/master/json.lua').read().decode('utf8')
+jsonLUA = urlrequest.urlopen('https://gist.githubusercontent.com/tylerneylon/59f4bcf316be525b30ab/raw/7f69cc2cea38bf68298ed3dbfc39d197d53c80de/json.lua').read().decode('utf8')
 with open(os.path.join(szModulesFolder, 'json.lua'), 'w+') as target:
   target.write(jsonLUA)
 
