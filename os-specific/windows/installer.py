@@ -27,7 +27,7 @@ with open(os.path.join(szModulesFolder, 'json.lua'), 'w+') as target:
   target.write(jsonLUA)
 
 # Install youtube-dl.exe to playlist.
-youtubeDLBinary = urlrequest.urlopen('https://github.com/rg3/youtube-dl/releases/download/2018.08.04/youtube-dl.exe').read()
+youtubeDLBinary = urlrequest.urlopen('https://youtube-dl.org/downloads/latest/youtube-dl.exe').read()
 with open(os.path.join(szPlaylistFolder, 'youtube-dl.exe'), 'wb') as target:
   target.write(youtubeDLBinary)
 
